@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom";
 import AppRoutes from "@/routes/AppRoutes";
-import { BrowserRouter } from "react-router-dom";
 
 function App() {
   const location = useLocation();
@@ -19,13 +18,4 @@ function App() {
     </div>
   );
 }
-
-function AppWrapper() {
-  return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  );
-}
-
-export default AppWrapper;
+export default App;
