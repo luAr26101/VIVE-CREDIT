@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { fileURLToPath } from "url";
+import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 const __filename = fileURLToPath(import.meta.url);
@@ -14,6 +14,7 @@ export default defineConfig({
       "@modules": path.resolve(__dirname, "src/modules"),
       "@core": path.resolve(__dirname, "src/core"),
       "@routes": path.resolve(__dirname, "src/routes"),
+      "@": path.resolve(__dirname, "src"),
     },
   },
 });
