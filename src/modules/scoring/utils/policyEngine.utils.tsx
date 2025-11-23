@@ -121,7 +121,7 @@ import {
   AlertCircle,
   Clock,
 } from "lucide-react";
-import { PolicyRuleType, PolicyRuleStatus } from "../types/policyEngine.types";
+import type { PolicyRuleType, PolicyRuleStatus } from "../types/policyEngine.types";
 
 /**
  * Returnează iconița corespunzătoare tipului de regulă

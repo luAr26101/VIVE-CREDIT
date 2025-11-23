@@ -67,7 +67,9 @@ export default function ApplicationTable<T>({
               key={col.key}
               className={`${col.className} text-gray-800 dark:text-gray-100`}
             >
-              {col.render ? col.render(item) : (item as any)[col.key]}
+              {col.render
+                ? col.render(item)
+                : ((item as Record<string, unknown>)[col.key] as ReactNode)}
             </div>
           ))}
         </div>
