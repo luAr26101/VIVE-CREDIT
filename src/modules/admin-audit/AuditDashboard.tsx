@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AuditFilters } from "./AuditFilters";
 import { AuditTable } from "./AuditTable";
 import { getAuditData } from "@/services/auditService";
 import type {
   AuditFilters as AuditFiltersType,
-  AuditAction,
 } from "@/types/audit";
 import type { AuditAction as TableAuditAction } from "./AuditTable";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";

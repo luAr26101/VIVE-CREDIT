@@ -108,7 +108,6 @@
 //   getRuleTypeLabel,
 //   getStatusLabel,
 // };
-import React from "react";
 import {
   Shield,
   AlertTriangle,
