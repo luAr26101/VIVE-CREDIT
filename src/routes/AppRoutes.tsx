@@ -1,4 +1,6 @@
 import { AuditDashboard } from "@/modules/admin-audit/AuditDashboard";
+import ApplicationsPage from "@/modules/applications/pages/ApplicationsPage";
+import NewApplicationPage from "@/modules/applications/pages/NewApplicationPage";
 import DashboardPage from "@/modules/dashboard/pages/DashboardPage";
 import DocumentsPage from "@/modules/dashboard/pages/DocumentsPage";
 import LoanPage from "@/modules/dashboard/pages/LoanPage";
@@ -9,7 +11,6 @@ import OperatorDashboardLayout from "@/modules/operator-dashboard/layout/Operato
 import OperatorDashboardPage from "@/modules/operator-dashboard/pages/OperatorDasboardPage";
 import RiskPage from "@/modules/operator-dashboard/pages/RiskPage";
 import PolicyEnginePage from "@/modules/scoring/pages/PolicyEnginePage";
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 const AppRoutes = () => {
@@ -35,6 +36,10 @@ const AppRoutes = () => {
         {/* <Route path="sales" element={<SalesPage />} /> */}
         {/* <Route path="collection" element={<CollectionPage />} /> */}
       </Route>
+
+      {/* Applications */}
+      <Route path='/applications' element={<ApplicationsPage />} />
+      <Route path='/applications/new' element={<NewApplicationPage />} />
 
       {/* Policy Engine */}
       <Route path='/policy-engine' element={<PolicyEnginePage />} />
