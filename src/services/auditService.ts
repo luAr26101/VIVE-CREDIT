@@ -1,37 +1,18 @@
-type AuditAction = {
-  user: string;
-  entity: string;
-  date: string;
-  [key: string]: any;
-};
+import type { AuditAction, AuditFilters } from '../types/audit';
+import { auditMock } from '../modules/admin-audit/mock/auditMock';
 
-type AuditFilter = {
-  user?: string;
-  entity?: string;
-  dateFrom?: string | Date;
-  dateTo?: string | Date;
-};
-
-let auditMock: any[] = [];
-try {
-  const mod = require("../mock/auditMock");
-  if (mod) {
-    if (Array.isArray(mod.auditMock)) {
-      auditMock = mod.auditMock;
-    } else if (Array.isArray(mod)) {
-      auditMock = mod;
-    }
-  }
-} catch {}
-
-export const getAuditData = (filters: AuditFilter): AuditAction[] => {
+export const getAuditData = (filters: AuditFilters): AuditAction[] => {
   return auditMock.filter((item) => {
+    const itemDate = new Date(item.timestamp);
+    const fromDate = filters.dateFrom ? new Date(filters.dateFrom) : null;
+    const toDate = filters.dateTo ? new Date(filters.dateTo) : null;
+
     return (
-      (!filters.user || item.user.includes(filters.user)) &&
-      (!filters.entity || item.entity.includes(filters.entity)) &&
-      (!filters.dateFrom ||
-        new Date(item.date) >= new Date(filters.dateFrom)) &&
-      (!filters.dateTo || new Date(item.date) <= new Date(filters.dateTo))
+      (!filters.user || item.user.toLowerCase().includes(filters.user.toLowerCase())) &&
+      (!filters.entity || item.entity.toLowerCase().includes(filters.entity.toLowerCase())) &&
+      (!filters.action || item.action.toLowerCase().includes(filters.action.toLowerCase())) &&
+      (!fromDate || itemDate >= fromDate) &&
+      (!toDate || itemDate <= toDate)
     );
   });
 };
