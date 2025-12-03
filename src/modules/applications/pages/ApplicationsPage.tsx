@@ -1,7 +1,7 @@
-import ApplicationsSummary from "./components/applications/ApplicationsSummary";
-import ApplicationsTable from "./components/applications/ApplicationsTable";
-import ApplicationsTitle from "./components/applications/ApplicationsTitle";
-import DashboardLayout from "./components/layout/DashboardLayout";
+import ApplicationsSummary from "../components/ApplicationsSummary";
+import ApplicationsTable from "../components/ApplicationsTable";
+import ApplicationsTitle from "../components/ApplicationsTitle";
+import DashboardLayout from "../components/layout/DashboardLayout";
 
 const stats = [
   { label: "Total Applications", value: 10 },
