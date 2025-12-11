@@ -24,6 +24,7 @@ import SuccessPage from "@/modules/onboarding/pages/SuccessPage";
 import ClientHomePage from "@/modules/dashboard/pages/ClientHomePage";
 import DashboardPage from "@/modules/dashboard/pages/DashboardPage";
 import HelpPage from "@/modules/dashboard/pages/HelpPage";
+import UploadDocumentPage from "@/modules/dashboard/pages/UploadDocumentPage";
 import DocumentsPage from "@/modules/dashboard/pages/DocumentsPage";
 import LoanPage from "@/modules/dashboard/pages/LoanPage";
 import PaymentsPage from "@/modules/dashboard/pages/PaymentsPage";
@@ -120,6 +121,15 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute allowedRoles={["client"]}>
             <DocumentsPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/dashboard/documents/upload"
+        element={
+          <ProtectedRoute allowedRoles={["client"]}>
+            <UploadDocumentPage />
           </ProtectedRoute>
         }
       />

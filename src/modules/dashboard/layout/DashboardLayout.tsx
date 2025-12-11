@@ -9,6 +9,7 @@ import {
   Sun,
   Moon,
   LayoutDashboard,
+  HelpCircle,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "@/context/ThemeContext";
@@ -158,6 +159,20 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             onClick={() => setOpen(false)}
           >
             <FileText size={20} /> Documente
+          </NavLink>
+
+          <NavLink
+            to="/dashboard/help"
+            className={({ isActive }) =>
+              `${linkClasses} ${
+                isActive
+                  ? "text-blue-600 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300"
+                  : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              }`
+            }
+            onClick={() => setOpen(false)}
+          >
+            <HelpCircle size={20} /> Ajutor
           </NavLink>
         </nav>
 
