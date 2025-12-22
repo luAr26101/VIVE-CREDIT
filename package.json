@@ -23,6 +23,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
+    "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-checkbox": "^1.3.3",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-progress": "^1.1.8",
@@ -32,6 +34,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@reduxjs/toolkit": "^2.10.1",
     "@shadcn/ui": "^0.0.4",
+    "chart.js": "^4.5.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cors": "^2.8.5",
@@ -41,15 +44,20 @@
     "lucide-react": "^0.554.0",
     "multer": "^2.0.2",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.68.0",
+    "react-hot-toast": "^2.6.0",
     "react-icons": "^5.5.0",
     "react-international-phone": "^4.6.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.6",
+    "recharts": "^3.5.1",
     "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.2.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
