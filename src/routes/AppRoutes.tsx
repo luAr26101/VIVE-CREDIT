@@ -41,9 +41,11 @@ import LoanForm from "@/pages/loan/LoanForm";
 import ProductSettingsPage from "@/modules/admin-products/pages/ProductSettingsPage";
 import OperatorDashboardLayout from "@/modules/operator-dashboard/layout/OperatorDashboardLayout";
 import ApplicationsPage from "@/modules/operator-dashboard/pages/ApplicationsPage";
+import ClientManagementPage from "@/modules/operator-dashboard/pages/ClientManagement";
 import OperatorDashboardPage from "@/modules/operator-dashboard/pages/OperatorDasboardPage";
 import RiskPage from "@/modules/operator-dashboard/pages/RiskPage";
 import ApplicationDetail from "@/modules/operator-dashboard/submodules/sales/ApplicationDetail";
+import SalesDashboard from "@/modules/operator-dashboard/submodules/sales/SalesDashboard";
 
 /* Engines */
 import { AuditDashboard } from "@/modules/admin-audit/AuditDashboard";
@@ -53,6 +55,7 @@ import { ScorecardEngine } from "@/modules/scoring/pages/ScorecardEngine";
 
 /* Protected route */
 import ProtectedRoute from "@/components/ProtectedRoute";
+import RequestLoanPage from "@/modules/applications/pages/RequestLoanPage";
 
 const AppRoutes = () => {
   return (
@@ -69,6 +72,7 @@ const AppRoutes = () => {
         <Route path='/anpc' element={<AnpcPage />} />
         <Route path='/cookies' element={<CookiePolicyPage />} />
       </Route>
+      <Route path='/dashboard/loan-form' element={<RequestLoanPage />} />
 
       {/* AUTH ENTRY */}
       <Route path='/login' element={<LoginPage />} />
@@ -184,6 +188,7 @@ const AppRoutes = () => {
         }
       >
         <Route index element={<OperatorDashboardPage />} />
+        <Route path='clients' element={<ClientManagementPage />} />
         <Route path='risk' element={<RiskPage />} />
         <Route path='sales' element={<SalesDashboard />} />
         <Route path='sales/:id' element={<ApplicationDetail />} />
