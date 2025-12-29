@@ -72,7 +72,6 @@ const AppRoutes = () => {
         <Route path='/anpc' element={<AnpcPage />} />
         <Route path='/cookies' element={<CookiePolicyPage />} />
       </Route>
-      <Route path='/dashboard/loan-form' element={<RequestLoanPage />} />
 
       {/* AUTH ENTRY */}
       <Route path='/login' element={<LoginPage />} />
@@ -138,6 +137,15 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute allowedRoles={["client"]}>
             <LoanPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path='/dashboard/loan-form'
+        element={
+          <ProtectedRoute allowedRoles={["client"]}>
+            <RequestLoanPage />
           </ProtectedRoute>
         }
       />
