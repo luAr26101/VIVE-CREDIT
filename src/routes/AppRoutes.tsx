@@ -36,6 +36,7 @@ import LoanPage from "@/modules/dashboard/pages/LoanPage";
 import PaymentsPage from "@/modules/dashboard/pages/PaymentsPage";
 import UploadDocumentPage from "@/modules/dashboard/pages/UploadDocumentPage";
 import LoanForm from "@/pages/loan/LoanForm";
+import DecisionResultCard from "@/modules/decision-engine/components/DecisionResultCard";
 
 /* Operator Dashboard */
 import ProductSettingsPage from "@/modules/admin-products/pages/ProductSettingsPage";
@@ -212,6 +213,20 @@ const AppRoutes = () => {
             <LoanForm />
           </ProtectedRoute>
         }
+      />
+      {/*
+      <Route
+        path="/dashboard/decision-result"
+        element={
+          <ProtectedRoute allowedRoles={["client"]}>
+            <DecisionResultCard />
+          </ProtectedRoute>
+        }
+      />*/}
+
+      <Route
+        path="/dashboard/decision-result"
+        element={<DecisionResultCard />}
       />
 
       {/* OPERATOR DASHBOARD */}
